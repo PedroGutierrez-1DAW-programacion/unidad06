@@ -11,7 +11,6 @@ public class Ej01_primitiva {
 		primitiva = generarPrimitiva(primitiva);
 		
 		mostrarPrimitiva(primitiva);
-
 	}
 
 	private static boolean[] generarPrimitiva(boolean[] primitiva) {
@@ -27,9 +26,12 @@ public class Ej01_primitiva {
 	}
 
 	private static void mostrarPrimitiva(boolean[] primitiva) {
+		System.out.println("+----------+");
+		System.out.println("| Numeros: |");
 		for(int i=0; i<primitiva.length; i++)
 			if(primitiva[i])
-				System.out.println(i+1);
+				System.out.printf("|%6s    |\n", i+1);
+		System.out.println("+----------+");
 	}
 	
 	private static int aleatorio(int base, int rango) {
