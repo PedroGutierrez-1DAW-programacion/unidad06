@@ -34,16 +34,21 @@ public class Ej03_palindromo {
 
 	private static boolean comprobarPalindromo(String[] array) {
 		boolean palindromo = true;
-		for(int i=1; i<(array.length / 2); i++)
-			if(!array[i].equals(array[array.length - i]))
+		for(int i=0; i<(array.length / 2); i++)
+			if(!array[i].equals(array[array.length - i - 1]))
 				palindromo = false;
 		return palindromo;
 	}
 
 	private static String[] stringToArray(String string) {
-		// Devuelve la primera casilla en blanco,
-		// "comprobarPalindromo" está preparado para ello
-		return string.split("");
+		return arrayEliminarPrimero(string.split(""), 0);
+	}
+
+	private static String[] arrayEliminarPrimero(String[] array, int p) {
+		String[] nuevoArray = new String[array.length - 1];
+		for(int i=1; i<array.length; i++)
+			nuevoArray[i-1] = array[i];
+		return nuevoArray;
 	}
 
 }
