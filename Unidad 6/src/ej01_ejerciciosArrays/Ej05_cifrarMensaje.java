@@ -16,8 +16,8 @@ public class Ej05_cifrarMensaje {
 				mensaje[i] += (i != mensaje.length - 1 ?
 					mensaje[i+1] :
 					4) + 3;
-			System.out.println("Mensaje cifrado:");
-			System.out.println(new String(mensaje));
+			System.out.print("Mensaje cifrado:     ");
+			System.out.print(new String(mensaje));
 		}else{
 			System.err.println("Has usado caracteres prohibidos.");
 		}
