@@ -33,18 +33,17 @@ public class Ej03_palindromo {
 	}
 
 	private static boolean comprobarPalindromo(String[] array) {
-		boolean palindromo = true;
 		for(int i=0; i<(array.length / 2); i++)
 			if(!array[i].equals(array[array.length - i - 1]))
-				palindromo = false;
-		return palindromo;
+				return false;
+		return true;
 	}
 
 	private static String[] stringToArray(String string) {
-		return arrayEliminarPrimero(string.split(""), 0);
+		return arrayEliminarPrimero(string.split(""));
 	}
 
-	private static String[] arrayEliminarPrimero(String[] array, int p) {
+	private static String[] arrayEliminarPrimero(String[] array) {
 		String[] nuevoArray = new String[array.length - 1];
 		for(int i=1; i<array.length; i++)
 			nuevoArray[i-1] = array[i];
