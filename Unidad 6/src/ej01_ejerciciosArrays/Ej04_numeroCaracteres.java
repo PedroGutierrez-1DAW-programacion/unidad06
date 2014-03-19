@@ -33,7 +33,7 @@ public class Ej04_numeroCaracteres {
 		System.out.println("Número de caracteres:");
 		for(int i=0; i<chars.length; i++)
 			if(chars[i] > 0)
-				System.out.printf(" %s  =>  %4d\n", (char) i, chars[i]);
+				System.out.printf(" %s [%4d]  =>  %4d\n", (char) i, i, chars[i]);
 		
 		teclado.close();
 
