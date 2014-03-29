@@ -1,7 +1,5 @@
 package ej03_pantalla_Ej10;
 
-import java.awt.peer.MenuPeer;
-
 public class Pantalla {
 	private char[][] pantalla;
 	private char dibujar = 'X';
