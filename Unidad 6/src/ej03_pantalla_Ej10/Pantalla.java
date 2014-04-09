@@ -20,12 +20,12 @@ public class Pantalla {
 		
 		while(true){
 			switch((int) MenuPantalla.MENU.datos()[0]){
-			case 1: accionCaracter(MenuPantalla.CARACTER.datos());break;
-			case 2: accionCuadrado(MenuPantalla.CUADRADO.datos());break;
-			case 3: accionRectangulo(MenuPantalla.RECTANGULO.datos());break;
-			case 4: accionTriangulo(MenuPantalla.TRIANGULO.datos());break;
-			case 6: accionMostrarPantalla(); break;
-			default: System.err.println("Opción no válida\n"); break;
+				case 1: accionCaracter(MenuPantalla.CARACTER.datos());break;
+				case 2: accionCuadrado(MenuPantalla.CUADRADO.datos());break;
+				case 3: accionRectangulo(MenuPantalla.RECTANGULO.datos());break;
+				case 4: accionTriangulo(MenuPantalla.TRIANGULO.datos());break;
+				case 6: accionMostrarPantalla(); break;
+				default: System.err.println("Opción no válida\n"); break;
 			}
 		}
 	}
@@ -62,8 +62,8 @@ public class Pantalla {
 		int y = datos[1];
 		int s = --datos[2];
 
-		dibujarLinea(x, y, x, y + s);
-		dibujarLinea(x, y + s, x + s, y + s);
+		dibujarArea(x, y, x, y + s);
+		dibujarArea(x, y + s, x + s, y + s);
 		dibujarDiagonal(x, y, s);
 	}
 
@@ -77,13 +77,13 @@ public class Pantalla {
 	}
 
 	private void dibujarRectangulo(int x, int y, int sx, int sy) {
-		dibujarLinea(x, y, x, y + sy);
-		dibujarLinea(x, y, x + sx, y);
-		dibujarLinea(x + sx, y, x + sx, y + sy);
-		dibujarLinea(x, y + sy, x + sx, y + sy);		
+		dibujarArea(x, y, x, y + sy);
+		dibujarArea(x, y, x + sx, y);
+		dibujarArea(x + sx, y, x + sx, y + sy);
+		dibujarArea(x, y + sy, x + sx, y + sy);		
 	}
 	
-	private void dibujarLinea(int x1, int y1, int x2, int y2) {
+	private void dibujarArea(int x1, int y1, int x2, int y2) {
 		for(int x=x1; x<=x2; x++)
 			for(int y=y1; y<=y2; y++)
 				dibujarPunto(x, y);
