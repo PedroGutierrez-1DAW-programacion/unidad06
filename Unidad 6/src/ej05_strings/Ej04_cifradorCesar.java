@@ -6,9 +6,14 @@ public class Ej04_cifradorCesar {
 		
 		String frase = "hola";
 
-		System.out.println(cifradorCesar(frase, -1)); // gnkz
+		System.out.println(cifradorCesar(frase,-1)); // gnkz
 		System.out.println(cifradorCesar(frase, 1)); // ipmb
 		System.out.println(cifradorCesar(frase, 3)); // krod
+		
+		// Codificamos
+		frase = cifradorCesar(frase, 3); // krod
+		// Decodificamos
+		System.out.println("\n" + cifradorCesar(frase,-3)); // hola
 	}
 
 	private static String cifradorCesar(String frase, int n) {
